@@ -3467,11 +3467,20 @@ p{
     font-size:16px;
     margin:0 0 24px
 }
+/* header */
 h1{
-    font-size:175%
+    font-size:350%;
+    font-weight: 700;
+    background-image: linear-gradient(90deg, #45b89c 10%, #39b54a 50%, #e5fb75 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .rst-content .toctree-wrapper>p.caption,h2{
     font-size:150%
+}
+h2 {
+    font-weight: 700;
+    color: black
 }
 h3{
     font-size:125%
@@ -3633,15 +3642,15 @@ html{
 }
 /* sidebar TOC headers (e.g., Get started) */
 .wy-menu-vertical header,.wy-menu-vertical p.caption{
-    color:#70C8A0;
+    color:#45b89c;
     height:32px;
     line-height:32px;
     padding:0 1.47em;
-    margin:12px 0 0;
+    /* margin:12px 0 0; */
     display:block;
     text-transform:capitalize;
-    font-size:100%;
-    font-weight:450;
+    font-size:110%;
+    font-weight:600;
     letter-spacing:0.5px;
     font-family:Helvetica Neue,Arial,sans-serif
     white-space:nowrap
@@ -4874,11 +4883,11 @@ span.linenos.special { color: #303030; background-color: #ECECEC; padding-left: 
     gap: 10px;
 }
 .index-demos-headers {
-    font-weight:450;
+    font-weight:600;
     letter-spacing:0.5px;
     font-family:Helvetica Neue,Arial,sans-serif
-    color:#70C8A0;
-    font-size: 50;
+    color:#45b89c;
+    font-size: 110%;
 }
 .index-demos-desc {
     margin: 5px 0 5px 0;
