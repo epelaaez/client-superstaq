@@ -28,8 +28,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev]
       - name: Format
         run: |
           check/format_.py
@@ -49,8 +49,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq -e ./qiskit-superstaq -e ./supermarq-benchmarks
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq -e ./qiskit-superstaq -e ./supermarq-benchmarks
       - name: Pylint
         run: |
           check/pylint_.py --all
@@ -70,8 +70,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev]
       - name: Flake8
         run: |
           check/flake8_.py
@@ -91,8 +91,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
       - name: Type check
         run: |
           check/mypy_.py
@@ -115,8 +115,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
       - name: Coverage check
         run: |
           check/coverage_.py
@@ -132,8 +132,8 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev]
       - name: Coverage check
         run: |
           check/coverage_.py general-superstaq
@@ -149,8 +149,8 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev]
       - name: Coverage check
         run: |
           check/coverage_.py general-superstaq
@@ -166,8 +166,8 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./qiskit-superstaq[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./qiskit-superstaq[dev]
       - name: Coverage check
         run: |
           check/coverage_.py general-superstaq
@@ -187,8 +187,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
       - name: Pytest-mac check
         run: |
           check/pytest_.py
@@ -204,8 +204,8 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
       - name: Pytest-win check
         run: |
           check/pytest_.py
@@ -227,8 +227,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq -e ./qiskit-superstaq -e ./supermarq-benchmarks
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq -e ./qiskit-superstaq -e ./supermarq-benchmarks
       - name: Requirements check
         run: |
           check/requirements.py
@@ -250,8 +250,8 @@ jobs:
           key: ${{ env.pythonLocation }}-${{ hashFiles('**/setup.py', '**requirements.txt') }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
+          python -m python3 -m pip install --upgrade pip
+          python3 -m pip install -e ./general-superstaq[dev] -e ./cirq-superstaq[dev] -e ./qiskit-superstaq[dev] -e ./supermarq-benchmarks[dev]
       - name: Notebook check
         run: |
           check/pytest_.py --notebook

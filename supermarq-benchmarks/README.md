@@ -15,7 +15,7 @@
 The SupermarQ package is available via `pip` and can be installed in your current Python environment with the command:
 
 ```
-pip install supermarq
+python3 -m pip install supermarq
 ```
 
 ## Install Dev Requirements 
@@ -23,7 +23,7 @@ pip install supermarq
 This is required if you intend to run checks locally
 
 ```
-pip install .[dev]
+python3 -m pip install .[dev]
 ```
 
 

@@ -17,7 +17,7 @@ long_description = io.open("README.md", encoding="utf-8").read()
 requirements = open("requirements.txt").readlines()
 requirements = [r.strip() for r in requirements]
 
-# Read in dev requirements, installed with 'pip install general-superstaq[dev]'
+# Read in dev requirements, installed with 'python3 -m pip install general-superstaq[dev]'
 dev_requirements = open("dev-requirements.txt").readlines()
 dev_requirements = [r.strip() for r in dev_requirements]
 

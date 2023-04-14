@@ -137,7 +137,7 @@ class UserConfig:
                 except ImportError:
                     raise ModuleNotFoundError(
                         "The PyYAML package is required to upload AQT configurations from dicts. "
-                        "You can install it using 'pip install pyyaml'."
+                        "You can install it using 'python3 -m pip install pyyaml'."
                     )
                 except yaml.YAMLError:
                     pass
@@ -222,7 +222,7 @@ class UserConfig:
             except ImportError:
                 raise ModuleNotFoundError(
                     "The PyYAML package is required to parse AQT configuration files. "
-                    "You can install it using 'pip install pyyaml'."
+                    "You can install it using 'python3 -m pip install pyyaml'."
                 )
 
             config_dict = self.aqt_get_configs()

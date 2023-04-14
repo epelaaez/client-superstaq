@@ -11,7 +11,7 @@ Clone the repository, set up your virtual environment, install requirements, and
     python3 -m venv docs-superstaq-env
     source docs-superstaq-env/bin/activate
     cd docs-superstaq
-    pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt
     git submodule update --init --recursive
 
 ### Build the docs
@@ -22,7 +22,7 @@ Clone the repository, set up your virtual environment, install requirements, and
 
 ## How to update docs-superstaq
 1. Make sure you are on the `main` branch in `docs-superstaq` as well as the client submodules.
-0. Make sure submodules are updated with `git pull --recurse-submodules`. Additionally, update relevant dependencies within the submodules (`pip install -e .`, `pip install general-superstaq --upgrade`).
+0. Make sure submodules are updated with `git pull --recurse-submodules`. Additionally, update relevant dependencies within the submodules (`python3 -m pip install -e .`, `python3 -m pip install general-superstaq --upgrade`).
 0. Create a new branch off of `main` in which to make your updates.
 0. Make any relevant updates.
 0. If any updates were made in the client submodules (e.g., `qiskit-superstaq`), run `build_docs.py`.

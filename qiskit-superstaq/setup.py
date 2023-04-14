@@ -17,11 +17,11 @@ long_description = io.open("README.md", encoding="utf-8").read()
 requirements = open("requirements.txt").readlines()
 requirements = [r.strip() for r in requirements]
 
-# Read in dev requirements, installed with 'pip install qiskit-superstaq[dev]'
+# Read in dev requirements, installed with 'python3 -m pip install qiskit-superstaq[dev]'
 dev_requirements = open("dev-requirements.txt").readlines()
 dev_requirements = [r.strip() for r in dev_requirements]
 
-# Read in example requirements, installed with 'pip install qiskit-superstaq[examples]
+# Read in example requirements, installed with 'python3 -m pip install qiskit-superstaq[examples]
 example_requirements = open("example-requirements.txt").readlines()
 example_requirements = [r.strip() for r in example_requirements]
 

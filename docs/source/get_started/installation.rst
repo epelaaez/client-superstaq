@@ -16,19 +16,19 @@ Then, install ``cirq-superstaq``:
 
 .. code-block:: bash
 
-    pip install cirq-superstaq
+    python3 -m python3 -m pip install cirq-superstaq
 
 Run the following to install developer requirements, which is required if you intend to run checks locally.
 
 .. code-block:: bash
 
-    pip install .[dev]
+    python3 -m pip install .[dev]
 
 Run the following to install neutral atom device dependencies.
 
 .. code-block:: bash
 
-    pip install -r neutral-atom-requirements.txt
+    python3 -m pip install -r neutral-atom-requirements.txt
 
 
 Installing qiskit-superstaq
@@ -44,16 +44,16 @@ Then, install ``qiskit-superstaq``:
 
 .. code-block:: bash
     
-    pip install qiskit-superstaq
+    python3 -m pip install qiskit-superstaq
 
 Run the following to install developer requirements, which is required if you intend to run checks locally.
 
 .. code-block:: bash
 
-    pip install .[dev]
+    python3 -m pip install .[dev]
 
 Run the following to install neutral atom device dependencies.
 
 .. code-block:: bash
 
-    pip install -r neutral-atom-requirements.txt
+    python3 -m pip install -r neutral-atom-requirements.txt

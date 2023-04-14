@@ -9,10 +9,10 @@ dependencies can be installed via:
 ```
 python3 -m venv venv_cirq_superstaq
 source venv_cirq_superstaq/bin/activate
-pip install cirq-superstaq
+python3 -m pip install cirq-superstaq
 
 # Run the following to install dev requirements (required if you intend to run checks locally)
-pip install .[dev]
+python3 -m pip install .[dev]
 
 ```
 

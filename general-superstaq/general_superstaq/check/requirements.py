@@ -203,7 +203,7 @@ def _inspect_local_version(package: str, latest_version: str) -> None:
         assert installed_version.split(".")[:2] == latest_version.split(".")[:2]
     except AssertionError:
         warning = f"WARNING: locally installed {package} version is not up to date."
-        suggestion = f"Try calling 'python -m pip install --upgrade {package}'."
+        suggestion = f"Try calling 'python -m python3 -m pip install --upgrade {package}'."
         print(check_utils.warning(warning))
         print(check_utils.warning(suggestion))
     except subprocess.CalledProcessError:
