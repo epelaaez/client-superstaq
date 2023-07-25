@@ -113,24 +113,6 @@ def compute_measurement_with_qiskit(circuit: qiskit.circuit.QuantumCircuit) -> f
     return reset_moments / gate_depth
 
 
-def compute_entanglement_with_qiskit(circuit: qiskit.circuit.QuantumCircuit) -> float:
-    """Compute the entanglement-ratio of the given quantum circuit.
-
-    Entanglement-ratio = ratio between # of 2-qubit gates and total number of gates in the
-    circuit.
-
-    Args:
-        circuit: A quantum circuit.
-
-    Returns:
-        The value of the entanglement feature for this circuit.
-    """
-    dag = qiskit.converters.circuit_to_dag(circuit)
-    dag.remove_all_ops_named("barrier")
-
-    return len(dag.two_qubit_ops()) / len(dag.gate_nodes())
-
-
 def compute_depth_with_qiskit(circuit: qiskit.circuit.QuantumCircuit) -> float:
     """Compute the critical depth of the given quantum circuit.
 

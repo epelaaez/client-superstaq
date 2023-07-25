@@ -72,10 +72,10 @@ def compute_measurement(circuit: cirq.Circuit) -> float:
 
 
 def compute_entanglement(circuit: cirq.Circuit) -> float:
-    """Compute the *entanglement* feature of the input circuit.
+    """Compute the entanglement-ratio of the given quantum circuit.
 
-    This function acts a wrapper which first converts the input `cirq.Circuit`
-    into a `qiskit.QuantumCircuit` before calculating the feature value.
+    Entanglement-ratio = ratio between # of 2-qubit gates and total number of gates in the
+    circuit.
 
     Args:
         circuit: A quantum circuit.
@@ -83,9 +83,13 @@ def compute_entanglement(circuit: cirq.Circuit) -> float:
     Returns:
         The value of the entanglement feature for this circuit.
     """
-    return supermarq.converters.compute_entanglement_with_qiskit(
-        supermarq.converters.cirq_to_qiskit(circuit)
-    )
+    return len(
+        list(
+            circuit.findall_operations(
+                lambda op: isinstance(op, cirq.GateOperation) and len(op.qubits) == 2
+            )
+        )
+    ) / len(list(circuit.all_operations()))
 
 
 def compute_depth(circuit: cirq.Circuit) -> float:
