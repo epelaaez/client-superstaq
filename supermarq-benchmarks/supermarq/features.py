@@ -1,13 +1,13 @@
 import cirq
+import networkx as nx
 
 import supermarq
 
 
 def compute_communication(circuit: cirq.Circuit) -> float:
-    """Compute the *communication* feature of the input circuit.
+    """Compute the program communication of the given quantum circuit.
 
-    This function acts a wrapper which first converts the input `cirq.Circuit`
-    into a `qiskit.QuantumCircuit` before calculating the feature value.
+    Program communication = circuit's average qubit degree / degree of a complete graph.
 
     Args:
         circuit: A quantum circuit.
@@ -15,9 +15,17 @@ def compute_communication(circuit: cirq.Circuit) -> float:
     Returns:
         The value of the communication feature for this circuit.
     """
-    return supermarq.converters.compute_communication_with_qiskit(
-        supermarq.converters.cirq_to_qiskit(circuit)
-    )
+    num_qubits = cirq.num_qubits(circuit)
+
+    graph = nx.Graph()
+    for moment in circuit:
+        for op in moment:
+            if cirq.num_qubits(op) == 2:
+                graph.add_edge(op.qubits[0], op.qubits[1])
+
+    degree_sum = sum([graph.degree(n) for n in graph.nodes])
+
+    return degree_sum / (num_qubits * (num_qubits - 1))
 
 
 def compute_liveness(circuit: cirq.Circuit) -> float:

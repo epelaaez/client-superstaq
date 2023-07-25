@@ -17,31 +17,6 @@ def cirq_to_qiskit(circuit: cirq.Circuit) -> qiskit.circuit.QuantumCircuit:
     return qiskit.circuit.QuantumCircuit().from_qasm_str(str(qasm))
 
 
-def compute_communication_with_qiskit(circuit: qiskit.circuit.QuantumCircuit) -> float:
-    """Compute the program communication of the given quantum circuit.
-
-    Program communication = circuit's average qubit degree / degree of a complete graph.
-
-    Args:
-        circuit: A quantum circuit.
-
-    Returns:
-        The value of the communication feature for this circuit.
-    """
-    num_qubits = circuit.num_qubits
-    dag = qiskit.converters.circuit_to_dag(circuit)
-    dag.remove_all_ops_named("barrier")
-
-    graph = nx.Graph()
-    for op in dag.two_qubit_ops():
-        q1, q2 = op.qargs
-        graph.add_edge(circuit.find_bit(q1).index, circuit.find_bit(q2).index)
-
-    degree_sum = sum([graph.degree(n) for n in graph.nodes])
-
-    return degree_sum / (num_qubits * (num_qubits - 1))
-
-
 def compute_liveness_with_qiskit(circuit: qiskit.circuit.QuantumCircuit) -> float:
     """Compute the liveness of the given quantum circuit.
 
