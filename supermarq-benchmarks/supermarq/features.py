@@ -38,10 +38,9 @@ def compute_liveness(circuit: cirq.Circuit) -> float:
 
 
 def compute_parallelism(circuit: cirq.Circuit) -> float:
-    """Compute the *parallelism* feature of the input circuit.
+    """Compute the parallelism of the given quantum circuit.
 
-    This function acts a wrapper which first converts the input `cirq.Circuit`
-    into a `qiskit.QuantumCircuit` before calculating the feature value.
+    Parallelism feature = max(1 - depth / # of gates, 0).
 
     Args:
         circuit: A quantum circuit.
@@ -49,9 +48,8 @@ def compute_parallelism(circuit: cirq.Circuit) -> float:
     Returns:
         The value of the parallelism feature for this circuit.
     """
-    return supermarq.converters.compute_parallelism_with_qiskit(
-        supermarq.converters.cirq_to_qiskit(circuit)
-    )
+    depth = len(cirq.Circuit(circuit.all_operations()))
+    return max(1 - (depth / len(list(circuit.all_operations()))), 0)
 
 
 def compute_measurement(circuit: cirq.Circuit) -> float:
